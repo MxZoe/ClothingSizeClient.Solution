@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bxMbQ0CmvFIPrJsFuGzDaK2n5hMozih/kW3RmC9xRs56BsBeKBGnzkxcRg1EyrI8gXYLDbno7jpoVeP15iDSCA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zwein\\epicodus\\c#\\ClothingSizeClient.Solution\\ClothingSizeClient\\ClothingSizeClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zwein\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\zwein\\.nuget\\packages\\restsharp\\106.6.10\\restsharp.106.6.10.nupkg.sha512",
+    "C:\\Users\\zwein\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
