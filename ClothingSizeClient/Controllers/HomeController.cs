@@ -23,8 +23,8 @@ namespace ClothingSizeClient.Controllers
 
             if (search != null)
             {
-                var allQueries = ApiResponse.GetWhatever(search);
-                return View(allQueries);
+                var allQueries = ApiHelper.GetUserInput(search).Result.ToString();
+                return View("Index", allQueries);
             }
             else
             {

@@ -15,17 +15,7 @@
     @if(Model != null)
     {
 
-        <ol>
-        @foreach (ApiResponse response in Model)
-        {
-            <ul>
-                <li>Id: @response.BrandId</li>
-                <li>Name: @response.Name</li>
-
-            </ul>
-            <br>
-        }
-        </ol>
+        <p>@Model</p>
     }
 
     <div>
