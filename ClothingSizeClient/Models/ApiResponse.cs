@@ -22,15 +22,15 @@ namespace ClothingSizeClient.Models
         public string XXXL { get; set; }
         public string XXXXL { get; set; }
     
-    public static List<ApiResponse> GetWhatever(string userInput)
+    public static string GetWhatever(string userInput)
     {
       var apiCallTask = ApiHelper.GetUserInput(userInput);
       var result = apiCallTask.Result;
 
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<ApiResponse> whateverList = JsonConvert.DeserializeObject<List<ApiResponse>>(jsonResponse.ToString());
+      var jsonResponse = JsonConvert.SerializeObject(result);
+     // List<ApiResponse> whateverList = JsonConvert.DeserializeObject<List<ApiResponse>>(jsonResponse.ToString());
 
-      return whateverList;
+      return jsonResponse;
     }
   }
 }
