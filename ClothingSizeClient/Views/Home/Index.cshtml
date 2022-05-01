@@ -5,11 +5,27 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Clothing Size Search</h1>
-    <form>
-    <label for="text-input">localhost:5000/api/</label><br>
-    <input type="text" id="text-input" name="text-input"><br>
-    </form>
+
+    @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+    <b>Localhost:5000/api/:</b>
+    @Html.TextBox("search") <input type="submit" value="search" />
+    }
+    
+    @if(Model != null)
+    {
+        <ol>
+        @foreach (ApiResponse response in Model)
+        {
+            <ul>
+                <li>Id: @response.BrandId</li>
+                <li>Name: @response.Name</li>
+
+            </ul>
+            <br>
+        }
+        </ol>
+    }
 
     <div>
     
