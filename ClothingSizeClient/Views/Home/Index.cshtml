@@ -6,38 +6,65 @@
     Layout = "_Layout";
 }
 
-
-
-<div class="text-center">
+<div class="container">
 
     @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
     {
     <b>Localhost:5000/api/</b>
     @Html.TextBox("search") <input type="submit" value="search" />
     }
-    
+    <div class="row">
+        <div class="col-md-8">
     @if(Model != null)
     {
-        <div>
-        <p>@Model</p>
-        </div>
+        <div class="well">
+            <p>@Model</p>
+            </div>
+
     }
+        </div>
+        <div class="col-md-4">
 
-    <div>
-        <ul class="breadcrumb">
-            <li class="active">Home</li>
-        </ul>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Endpoints</h3>
+                </div>
+                <div class="panel-body">
+                    <h4><span class="label label-danger">api/Brands</span></h4>
+                    <p>Get all brands</p>
+                    <h4><span class="label label-danger">api/Brands/{id}</span></h4>
+                    <p> Get a brand by the brand id</p>
+                    <h4><span class="label label-danger">/api/Brands?{key}={value}</span></h4>
+                    <p>filter the brands using a query <br/>
+                        <strong>key options:</strong> clothingtype, gender, xxxs, xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl<br/>
+                    </p>
+                    <h4><span class="label label-danger">api/Sizes/</span></h4>
+                    <p>Get all sizes</p>
+                    <h4><span class="label label-danger">api/Sizes/{id}/</span></h4>
+                    <p>Get a size by id</p>
+                    <h4><span class="label label-danger">api/Sizes?{key}={value}</span></h4> 
+                    <p>filter the brands using a query <br/>
+                        <strong>key options:</strong> clothingtype, gender, lettersize, neck, chest, sleeve, waist, hip inseam<br/>
+                    </p>
 
-        <ul class="breadcrumb">
-            <li><a href="/home">Home</a></li>
-            <li class="active">Brands</li>
-        </ul>
-        <ul class="breadcrumb">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/size">Size</a></li>
-            <li class="active">Data</li>
-        </ul>
-    </div>
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+                </div>
+            </div>
+            @* <ul class="breadcrumb">
+                <li class="active">Home</li>
+            </ul>
+
+            <ul class="breadcrumb">
+                <li><a href="localhost:7195/api/brands">Home</a></li>
+                <li class="active">Brands</li>
+            </ul>
+            <ul class="breadcrumb">
+                <li><a href="localhost:7195/api/size">Size</a></li>
+                <li><a href="/size">Size</a></li>
+                <li class="active">Data</li>
+            </ul> *@
+        </div>
+    </div>    
 </div>
+
+
