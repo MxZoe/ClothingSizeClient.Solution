@@ -12,7 +12,7 @@
 
     @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
     {
-    <b>Localhost:5000/api/:</b>
+    <b>Localhost:5000/api/</b>
     @Html.TextBox("search") <input type="submit" value="search" />
     }
     
@@ -24,7 +24,19 @@
     }
 
     <div>
-    
+        <ul class="breadcrumb">
+            <li class="active">Home</li>
+        </ul>
+
+        <ul class="breadcrumb">
+            <li><a href="/home">Home</a></li>
+            <li class="active">Brands</li>
+        </ul>
+        <ul class="breadcrumb">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/size">Size</a></li>
+            <li class="active">Data</li>
+        </ul>
     </div>
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
