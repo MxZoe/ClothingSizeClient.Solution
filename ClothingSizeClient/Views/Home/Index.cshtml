@@ -1,70 +1,48 @@
-﻿@* @{
-    ViewData["Title"] = "Home Page";
-} *@
-
-@{
+﻿@{
     Layout = "_Layout";
 }
 
 <div class="container">
-
-    @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
-    {
-    <b>Localhost:5000/api/</b>
-    @Html.TextBox("search") <input type="submit" value="search" />
-    }
     <div class="row">
-        <div class="col-md-8">
-    @if(Model != null)
-    {
-        <div class="well">
-            <p>@Model</p>
-            </div>
-
-    }
-        </div>
         <div class="col-md-4">
-
             <div class="panel panel-danger">
                 <div class="panel-heading">
                     <h3 class="panel-title">Endpoints</h3>
                 </div>
                 <div class="panel-body">
-                    <h4><span class="label label-danger">api/Brands</span></h4>
+                    <h4><span class="label label-danger">@Html.ActionLink("api/Brands", "Index", new { search = "brands" })</span></h4>
                     <p>Get all brands</p>
-                    <h4><span class="label label-danger">api/Brands/{id}</span></h4>
+                    <h4><span class="label label-danger">/api/Brands/{id}</span></h4>
                     <p> Get a brand by the brand id</p>
                     <h4><span class="label label-danger">/api/Brands?{key}={value}</span></h4>
                     <p>filter the brands using a query <br/>
                         <strong>key options:</strong> clothingtype, gender, xxxs, xxs, xs, s, m, l, xl, xxl, xxxl, xxxxl<br/>
+                        <strong>value options:</strong> clothingtype: top/bottom, gender: mens/womens, xxxs-xxxxl: numerical size, i.e. 00, 4, or 16<br/>
                     </p>
-                    <h4><span class="label label-danger">api/Sizes/</span></h4>
+                    <h4><span class="label label-danger">@Html.ActionLink("api/Sizes", "Index", new { search = "sizes" })</span></h4>
                     <p>Get all sizes</p>
                     <h4><span class="label label-danger">api/Sizes/{id}/</span></h4>
                     <p>Get a size by id</p>
                     <h4><span class="label label-danger">api/Sizes?{key}={value}</span></h4> 
-                    <p>filter the brands using a query <br/>
+                    <p>filter the sizes using a query <br/>
                         <strong>key options:</strong> clothingtype, gender, lettersize, neck, chest, sleeve, waist, hip inseam<br/>
+                        <strong>value options: </strong> clothingtype: top/bottom; gender: mens/womens; neck: 14-18;  chest:30-60; sleeve: 29-40;  waist:25-50; hip:35-70 inseam: 25-40; <br/> 
                     </p>
-
-
                 </div>
             </div>
-            @* <ul class="breadcrumb">
-                <li class="active">Home</li>
-            </ul>
-
-            <ul class="breadcrumb">
-                <li><a href="localhost:7195/api/brands">Home</a></li>
-                <li class="active">Brands</li>
-            </ul>
-            <ul class="breadcrumb">
-                <li><a href="localhost:7195/api/size">Size</a></li>
-                <li><a href="/size">Size</a></li>
-                <li class="active">Data</li>
-            </ul> *@
         </div>
-    </div>    
+        <div class="col-md-8">
+            @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+            <b>Localhost:5000/api/</b>
+            @Html.TextBox("search") <input type="submit" value="search" />
+            }
+            @if(Model != null)
+            {
+                <div class="well">
+                    <p>@Model</p>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-
-
